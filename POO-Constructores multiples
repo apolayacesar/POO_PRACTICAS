@@ -1,0 +1,49 @@
+Archivo = Saludo.h
+
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Saludo {
+public:
+	string nombre;
+	string saludo;
+
+	// constructor I
+	Saludo(string a) {
+		this->nombre = a;
+		this->saludo = "Hola " + this->nombre;
+		cout << this->saludo;
+	}
+
+	// constructor II
+
+	Saludo() {
+		this->saludo = "\nHola";
+		cout << this->saludo << endl;
+	}
+
+};
+
+
+Archivo - Saludo.cpp
+
+#include "Saludar.h"
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	Saludo uno = Saludo("Cesar");
+	Saludo dos = Saludo();
+
+
+
+
+	getch();
+	return 0;
+}
