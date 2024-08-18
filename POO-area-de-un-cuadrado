@@ -1,0 +1,50 @@
+#pragma once
+
+
+class practica {
+	// identificador
+public:
+
+	// atributos
+
+	float altura, base;
+
+	// metodo constructor
+
+	practica(float a, float b) {
+		this->altura = a;
+		this->base = b;
+	}
+
+	// calcular
+
+	float calcularArea() {
+		// a = b*h
+
+		return this->base * this->altura;
+	}
+
+};
+
+#include "practica.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	float a, b;
+
+	cout << "Ingrese la base del cuadrado" << endl;
+	cin >> a;
+	cout << "Ingrese la altura del cuadrado" << endl;
+	cin >> b;
+
+	practica cuadrado1 = practica(a, b);
+
+	cout << "El area del cuadrado es: " << cuadrado1.calcularArea();
+
+
+	getch();
+	return 0;
+}
