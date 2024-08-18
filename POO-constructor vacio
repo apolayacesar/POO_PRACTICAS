@@ -1,0 +1,59 @@
+Archivo = Alumno.h
+
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+class Alumno {
+	// atributos
+
+public:
+	string nombre;
+	string carnet;
+	// constructor vacio
+	Alumno() {
+		this->nombre = "";
+		this->carnet = "";
+	}
+
+	void insertar(string n, string c) {
+		this->nombre = n;
+		this->carnet = c;
+	}
+
+	string imprimir() {
+		return "NOMBRE: " + this->nombre + " - " + this->carnet + "\n";
+	}
+
+};
+
+
+
+
+Archivo - Aluno.cpp
+
+#include "Alumno.h"
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	string n, c;
+	Alumno nuevo = Alumno();
+	cout << "Ingrese el nombre del alumno \n";
+	cin >> n;
+	cout << "Ingrese el numero del carnet \n";
+	cin >> c;
+
+	nuevo.insertar(n,c);
+	cout << nuevo.imprimir();
+
+
+	getch();
+	return 0;
+}
