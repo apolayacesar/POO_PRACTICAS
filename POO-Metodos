@@ -1,0 +1,60 @@
+Archivo - Numero.h
+
+#pragma once
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Numero {
+public:
+	int numero;
+	Numero(int a) {
+		this->numero = a;
+	}
+
+	// calcula factorial
+	int factorial() {
+		int resultado = 1;
+		for (int i = 1; i <= this->numero; i++) {
+			resultado *= i;
+		}
+		return resultado;
+	}
+
+	// regresa numero como cadena
+	string imprimir() {
+		string cadena = "";
+		cadena = to_string(this->numero);	
+		return "El numero es: " + cadena;
+	}
+
+	// imprime secuencia
+	void secuencia() {
+		for (int i = 0; i <= this->numero; i++) {
+			cout << i;
+		}
+	}
+
+};
+
+
+
+Archivo - Numero.cpp
+
+#include "Numero.h"
+#include <iostream>
+#include <conio.h>
+#include <string>
+using namespace std;
+
+
+int main() {
+
+	Numero numero = Numero(3);
+	cout << "El factorial del numero es: " << numero.factorial() << endl;
+	cout << numero.imprimir() << endl;
+	numero.secuencia();
+
+	getch();
+	return 0;
+}
