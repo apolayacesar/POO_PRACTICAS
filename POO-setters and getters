@@ -1,0 +1,66 @@
+Archivo - punto.h
+
+#pragma once
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Punto {
+	// atributos
+private:
+	int x, y;
+
+	// metodos
+public:
+	// constructor
+	Punto();
+	// setters / dar
+	void setPunto(int x, int y);
+	// getters / mostrar
+	int getPuntox();
+	int getPuntoy();
+
+};
+
+// metodo constructor
+Punto::Punto() {
+
+}
+
+// Establecemos valores a los atributos
+void Punto::setPunto(int a, int b) {
+	this->x = a;
+	this->y = b;
+}
+
+int Punto::getPuntox() {
+	return x;
+}
+
+int Punto::getPuntoy() {
+	return y;
+}
+
+
+Archivo - punto.cpp
+
+#include "Punto.h"
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	// objeto
+	Punto punto1;
+
+	punto1.setPunto(5, 6);
+	cout << punto1.getPuntox() << endl;
+	cout << punto1.getPuntoy() << endl;
+
+
+	getch();
+	return 0;
+}
