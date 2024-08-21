@@ -1,0 +1,148 @@
+Archivo Cuenta.h
+
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Cuenta {
+private:
+	// atributos
+	string titular;
+	float cantidad;
+public:
+	// constructores
+	Cuenta(void);
+	Cuenta(string);
+	Cuenta(string, float);
+
+	// destructores
+	~Cuenta(void);
+
+	// set
+	void setTitular(string a);
+	void setCantidad(float b);
+
+	// get
+	string getTitular();
+	float getCantidad();
+
+	// metodos de comportamiento
+	void ingresar(double c);
+	void retirar(double c);
+
+};
+
+// implementacion
+
+Cuenta::Cuenta(void) {
+	this->titular = "";
+	this->cantidad = 0.0;
+}
+
+Cuenta::Cuenta(string a) {
+	this->titular = a;
+}
+
+Cuenta::Cuenta(string a, float b) {
+	this->titular = a;
+	this->cantidad = b;
+}
+
+Cuenta::~Cuenta(void){}
+
+// setters
+
+void Cuenta::setTitular(string a) {
+	this->titular = a;
+}
+
+void Cuenta::setCantidad(float b) {
+	this->cantidad = b;
+}
+
+// getters
+
+string Cuenta::getTitular(void) {
+	return this->titular;
+}
+
+float Cuenta::getCantidad(void) {
+	return this->cantidad;
+}
+
+// metodos
+
+void Cuenta::ingresar(double c) {
+	if (c > 0) {
+		cantidad += c;
+	}
+}
+
+void Cuenta::retirar(double c) {
+	if ((cantidad - c) < 0) {
+		cantidad = 0.0;
+	}
+	else {
+		cantidad -= c;
+	}
+}
+
+Archivo Cuenta.cpp
+
+#include "Cuenta.h"
+#include <iostream>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	Cuenta cuenta1;
+	cout << "DATOS DE LA CUENTA 1" << endl;
+	cout << "------------------------------" << endl;
+	cout << "Titular: " << cuenta1.getTitular() << endl;
+	cout << "Cantidad: " << cuenta1.getCantidad() << endl;
+	cout << endl;
+
+	Cuenta cuenta2("Cesar");
+	cout << "DATOS DE LA CUENTA 2" << endl;
+	cout << "------------------------------" << endl;
+	cout << "Titular: " << cuenta2.getTitular() << endl;
+	cout << "Cantidad: " << cuenta2.getCantidad() << endl;
+	cout << endl;
+
+	Cuenta cuenta3("Cesar Alonso", 4500.54);
+	cout << "DATOS DE LA CUENTA 3" << endl;
+	cout << "------------------------------" << endl;
+	cout << "Titular: " << cuenta3.getTitular() << endl;
+	cout << "Cantidad: " << cuenta3.getCantidad() << endl;
+	cuenta3.retirar(5000.5);
+	cout << "Cantidad despues de retirar 5000.5: " << cuenta3.getCantidad() << endl;
+	cuenta3.ingresar(50);
+	cout << "Cantidad despues de ingresar 50: " << cuenta3.getCantidad() << endl;
+
+	string titular;
+	double cantidad;
+	cout << "INGRESE DATOS DE LA CUENTA 4" << endl;
+	cout << "Ingrese el titular: ";
+	getline(cin, titular);
+	cout << "\nIngrese la cantidad: ";
+	cin >> cantidad;
+	Cuenta cuenta4(titular, cantidad);
+	cout << "DATOS DE LA CUENTA 4" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "Titular: " << cuenta4.getTitular() << endl;
+	cout << "Cantidad: " << cuenta4.getCantidad() << endl;
+	cuenta4.ingresar(5677.8);
+	cout << "Cuenta 4 despues de ingresar 5677.8: " << cuenta4.getCantidad() << endl;
+	cuenta4.retirar(10000.45);
+	cout << "Cuenta 4 despues de retirar 10000.45: " << cuenta4.getCantidad() << endl;
+	cuenta4.ingresar(100.50);
+	cout << "Cuenta 4 despues de ingresar 100.50: " << cuenta4.getCantidad() << endl;
+
+
+
+	getch();
+	return 0;
+}
