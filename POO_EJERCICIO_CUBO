@@ -1,0 +1,43 @@
+Archivo cubo.h
+
+#pragma once
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class Cubo {
+private:
+	double lado;
+public:
+	Cubo(double l) {
+		this->lado = l;
+	}
+
+	double volumen() const{
+		return lado * lado * lado;
+	}
+	double superficie() const {
+		return 6 * lado * lado;
+	}
+};
+
+
+Archivo cubo.cpp
+
+#include "Cubo.h"
+
+
+int main() {
+
+	int l;
+	cout << "Ingrese el lado del cubo para poder hacer los calculos: ";
+	cin >> l;
+	Cubo cubo1(l);
+	cout << "El volumen del cubo es: " << cubo1.volumen();
+	cout << endl;
+	cout << "La superficie del cubo es: " << cubo1.superficie();
+
+
+	getch();
+	return 0;
+}
