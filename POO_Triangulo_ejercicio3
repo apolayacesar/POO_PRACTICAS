@@ -1,0 +1,50 @@
+Archivo Triangulo.h
+
+#pragma once
+
+
+class Triangulo {
+	// atributos
+private:
+	float base, altura;
+public:
+	// constructor
+	Triangulo(float a, float b) {
+		this->base = a;
+		this->altura = b;
+	}
+	// metodos
+	// siver para decir que la funcion solo calculara y no
+	// modificara nada del objeto
+	float area() const{
+		float formula = (base * altura) / 2;
+		return formula;
+	}
+	float perimetro(double lado1, double lado2) const{
+		float formula = base + lado1 + lado2;
+		return formula;
+	}
+};
+
+
+Archivo Triangulo.cpp
+
+#include "Triangulo.h"
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+int main() {
+
+	Triangulo t(6.7, 5.6);
+	cout << "Area del triangulo: " << t.area();
+	cout << endl;
+	cout << "Perimetro del triangulo: " << t.perimetro(8.9,3.4);	
+
+
+
+
+
+	getch();
+	return 0;
+}
