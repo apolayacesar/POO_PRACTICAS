@@ -1,0 +1,48 @@
+Archivo circulo.h
+
+#pragma once
+#include <iostream>
+#include <cmath>
+#include <conio.h>
+using namespace std;
+
+class circulo {
+private:
+	double radio;
+	const float M_PI = 3.14;
+public:
+	circulo(double r) {
+		this->radio = r;
+	}
+
+	double circunferencia();
+	double area();
+};
+
+double circulo::circunferencia(){
+	return 2 * M_PI * radio;
+}
+
+double circulo::area(){
+	return M_PI * radio * radio;
+}
+
+
+Archivo circulo.cpp
+
+#include "circulo.h"
+using namespace std;
+
+
+int main() {
+
+	circulo circulo1(5.6);
+
+	cout << "La circunferencia es: " << circulo1.circunferencia();
+	cout << endl;
+	cout << "El area es: " << circulo1.area();
+
+
+	getch();
+	return 0;
+}
