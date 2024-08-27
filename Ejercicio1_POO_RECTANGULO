@@ -1,0 +1,65 @@
+Archivo Rectangulo.h
+
+#pragma once
+
+// ejericio 1: Construya una clase llamada Rectangulo que tenga
+// los siguientes atributos: largo y ancho, y los siguientes
+// metodos: perimetro() y area()
+
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class RECTANGULO {
+	// atributos siempre deben ser private encabsulamiento
+private:
+	float largo, ancho;
+
+public:
+	RECTANGULO(float, float); // constructor	
+
+	void perimetro();
+	void area();
+
+
+};
+
+// implementacion
+
+RECTANGULO::RECTANGULO(float _largo, float _ancho) {
+	this->largo = _largo;
+	this->ancho = _ancho;
+}
+
+void RECTANGULO::perimetro() {
+	float _perimetro;
+	_perimetro = (2 * largo) + (2 * ancho);
+
+	cout << "El perimetro es: " << _perimetro << endl;
+}
+
+void RECTANGULO::area() {
+	float _area;
+	_area = largo * ancho;
+	cout << "El area es: " << _area << endl;
+}
+
+Archivo Rectangulo.cpp
+
+#include "RECTANGULO.h"
+
+int main() {
+	// instanciar = crear
+	RECTANGULO r1(11,20);
+
+
+	r1.perimetro();
+	r1.area();
+
+
+
+
+
+	getch();
+	return 0;
+}
